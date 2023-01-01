@@ -752,7 +752,7 @@ get_remote_file_size() {
         SIZE="-b2 authentication wrong-"
         return
       fi
-      SIZE=$(${B2CMD} ls --long "${BUCKET}" | awk '{ print $5 }' | paste -sd+ - | bc | numfmt --to=iec)
+      SIZE=$(${B2CMD} ls --long "${BUCKET}" | awk '{ print $5 }' | paste -sd+ - | bc | gnumfmt --to=iec)
     else
       SIZE="-b2 not found in PATH-"
     fi
